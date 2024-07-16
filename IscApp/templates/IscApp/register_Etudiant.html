@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inscription Etudiant</title>
+</head>
+<body>
+    <h2>Inscription Etudiant</h2>
+    <form method="post" action="{% url 'register_Etudiant' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">S'inscrire</button>
+    </form>
+</body>
+</html>

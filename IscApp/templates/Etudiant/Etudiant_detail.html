@@ -1,0 +1,9 @@
+{% extends 'IscApp/base.html' %}
+
+{% block title %}Détails de l'Étudiant{% endblock %}
+
+{% block content %}
+<h1>{{ etudiant.nom }} {{ etudiant.prenom }}</h1>
+<p>Email: {{ etudiant.email }}</p>
+<p>Date de naissance: {{ etudiant.date_naissance }}</p>
+{% endblock %}

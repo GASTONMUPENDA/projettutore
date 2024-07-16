@@ -1,0 +1,71 @@
+
+<!-- templates/IscApp/base.html -->
+<!DOCTYPE html>
+
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}IscApp Etudiant/Goma{% endblock %}</title>
+    
+    <link rel="stylesheet" href="{% static 'IscApp/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'IscApp/css/plan.css' %}">
+    <style>
+        body {
+            background-image: url("{% static 'IscApp/images/logoisc.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="{% static 'IscApp/css/styles.css' %}">
+
+    <link rel="stylesheet" href="{% static 'IscApp/css/styles.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'IscApp/css/bootstrap.css' }">
+
+    
+</head>
+<body>
+    <nav>
+        
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'cours' %}">cours</a></li>
+            <li><a href="{% url  'user_choice' %}">Utilisateurs</a>
+                
+                <ul>
+                    <li><a href="{% url 'login_Etudiant' %}">Etudiant</a></li>
+                    <li><a href="{% url 'Enseignant' %}">Enseignant</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- Bouton de recherche -->
+        <form action="{% url 'search_results' %}" method="GET" style="display:inline;">
+            <input type="text" name="matricule" placeholder="Rechercher...">
+            <button type="submit">Rechercher</button>
+        </form>
+        <!-- Notification -->
+        <a href="{% url 'notifications' %}" class="notification-icon">
+            <img src="{% static 'images/notification.png' %}" alt="Notifications">
+            <!-- Ajouter un indicateur pour le nombre de notifications -->
+            <span class="badge">3</span>
+        </a>
+        <!-- Photo de profil -->
+         
+        <div class="profile">
+            <a href="{% url 'profile' %}">
+                <img src="{% static 'images/profile.png' %}" alt="Profil" class="profile-img">
+            </a>
+        </div>
+    </nav>
+
+    <h1 class="text-center"> BIEN VENU SUR VOTRE APPLICATION</h1>
+
+    
+    {% include "footer.html" %}
+</body>
+</html>

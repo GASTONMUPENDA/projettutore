@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authentification</title>
+</head>
+<body>
+    
+  
+<h1>Authentification - {{ user_type|title }}</h1>
+    <a href="{% url 'login' %}?user_type={{ user_type }}">Se connecter</a>
+    <br>
+    <a href="{% url 'signup' %}?user_type={{ user_type }}">Créer un compte</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends IscApp/'base.html' %}
+
+
+{% load static %}
+
+{% block title %}Inscription utilisateur{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-4"></div>
+      <h2>Inscription Utilisateurs</h2>
+     <form method="post">
+
+        {% csrf_token %}
+        {{ user_form.as_p }}
+        {% if user_form.cleaned_data.user_type =='etudiant' %}
+             {{etudiant_form.as_p}}
+
+        {% elif user_form.cleaned_data.user_type == 'enseignant'%}
+             {{enseignant_form.as_p}}
+
+        {% endif %}
+
+        <input type="submit" class="btn btnt-succes" value="S'inscrire"/>
+     </form>
+</div>
+
+{% endblock %}
