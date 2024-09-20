@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord Enseignant - ISC-Goma</title>
+    <link rel="stylesheet" href="{% static 'IscApp/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'IscApp/css/dashboard.css' %}">
+</head>
+<body>
+    <header class="text-center my-3">
+        <img src="{% static 'IscApp/images/logoisc.png' %}" alt="Logo ISC" class="img-fluid logo">
+    </header>
+
+    <div id="dashboardCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+
+            <!-- Première slide -->
+            <div class="carousel-item active">
+                <div class="slide-content d-flex justify-content-center align-items-center">
+                    <h4>Importer la grille de cotation</h4>
+                    <a href="{% url 'Grille_de_cote' %}" class="btn btn-primary ml-3">Importer</a>
+                </div>
+            </div>
+
+            <!-- Deuxième slide -->
+            <div class="carousel-item">
+                <div class="slide-content d-flex justify-content-center align-items-center">
+                    <h4>Importer la liste des étudiants</h4>
+                    <a href="{% url 'saisie_notes' %}" class="btn btn-primary ml-3">Cotez</a>
+                </div>
+            </div>
+
+            <!-- Troisième slide -->
+            <div class="carousel-item">
+                <div class="slide-content d-flex justify-content-center align-items-center">
+                    <h4>Importer la liste étudiants déjà coté</h4>
+                    <a href="{% url 'cote_etudiants_enregistrer' %}" class="btn btn-primary ml-3">Voir</a>
+                </div>
+            </div>
+
+            <!-- Quatrième slide -->
+            <div class="carousel-item">
+                <div class="slide-content d-flex justify-content-center align-items-center">
+                    <h4>Mentions</h4>
+                    <a href="{% url 'determine_mention' %}" class="btn btn-primary ml-3">Voir</a>
+                </div>
+            </div>
+        </div>
+        <!-- Contrôles de navigation du carrousel -->
+        <a class="carousel-control-prev" href="#dashboardCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Précédent</span>
+        </a>
+        <a class="carousel-control-next" href="#dashboardCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Suivant</span>
+        </a>
+    </div>
+
+    <!-- Inclure les fichiers JavaScript -->
+    <script src="{% static 'IscApp/js/jquery.min.js' %}"></script>
+    <script src="{% static 'IscApp/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

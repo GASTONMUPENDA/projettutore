@@ -1,11 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profile</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <title>Modifier le profil</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h2 class="mt-4 mb-4">Modifier le profil</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            {% if form.instance.photo %}
+                <div class="mb-3">
+                    <label>Photo actuelle :</label>
+                    <img src="{{ form.instance.photo.url }}" alt="Photo actuelle" class="img-thumbnail" style="max-width: 200px;">
+                </div>
+            {% endif %}
+
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </form>
+    </div>
 </body>
 </html>

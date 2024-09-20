@@ -1,0 +1,218 @@
+/* static/css/styles.css */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+form {
+    display: flex;
+}
+
+input[type="text"] {
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.notification-icon {
+    position: relative;
+    margin-right: 20px;
+}
+
+.notification-icon .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+body {
+    background-image: url(" static 'IscApp/images/logoisc.jpg' ");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* static/css/styles.css */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+form {
+    display: flex;
+}
+
+input[type="text"] {
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.notification-icon {
+    position: relative;
+    margin-right: 20px;
+}
+
+.notification-icon .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+/* Style du footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-top {
+    border-bottom: 1px solid #555;
+    padding-bottom: 30px;
+}
+
+.footer-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer-link ul, .footer-address ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-link ul li, .footer-address ul li {
+    margin-bottom: 10px;
+}
+
+.footer-link ul li a, .footer-address ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link ul li a:hover, .footer-address ul li a:hover {
+    color: #fff;
+}
+
+.footer-about .logo img {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+.logo-image {
+    max-width: 120px; /* Taille de l'image du logo */
+}
+
+/* Style des icônes de réseaux sociaux */
+.footer-about ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-about ul li a {
+    font-size: 18px;
+    color: #bbb;
+    border: 1px solid #555;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.footer-about ul li a:hover {
+    color: #fff;
+    background-color: #007bff; /* Couleur au survol */
+    border-color: #007bff;
+}
+
+/* Bouton retour en haut */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    display: none;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+}
+
+.logo-image {
+    width: 150px;
+    height: auto;
+}
+
+
+
+
+

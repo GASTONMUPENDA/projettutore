@@ -14,10 +14,10 @@
 
         {% csrf_token %}
         {{ user_form.as_p }}
-        {% if user_form.cleaned_data.user_type =='etudiant' %}
+        {% if user_form.cleaned_data.user_type =='Etudiant' %}
              {{etudiant_form.as_p}}
 
-        {% elif user_form.cleaned_data.user_type == 'enseignant'%}
+        {% elif user_form.cleaned_data.user_type == 'Enseignant'%}
              {{enseignant_form.as_p}}
 
         {% endif %}

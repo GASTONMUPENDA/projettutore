@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau des Résultats</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input, button {
+            margin: 5px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tableau des Résultats</h1>
+
+    <!-- Formulaire pour ajouter un étudiant -->
+    <form id="EtudentForm">
+        <input type="text" id="name" placeholder="Nom de l'étudiant" required>
+        <input type="number" id="cours1" placeholder="Cours 1" required>
+        <input type="number" id="cours2" placeholder="Cours 2" required>
+        <input type="number" id="cours3" placeholder="Cours 3" required>
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nom de l'étudiant</th>
+                <th>Cours 1</th>
+                <th>Cours 2</th>
+                <th>Cours 3</th>
+                <th>Somme</th>
+                <th>Moyenne</th>
+                <th>Pourcentage</th>
+            </tr>
+        </thead>
+        <tbody id="EtudiantTable">
+            <!-- Les données des étudiants seront insérées ici -->
+        </tbody>
+    </table>
+
+    <script>
+        const etudiants = [];
+        let etudiantId = 1;
+        const tableBody = document.getElementById('EtudentTable');
+
+        document.getElementById('EtudiantForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche le rechargement de la page
+
+            const name = document.getElementById('name').value;
+            const cours1 = parseFloat(document.getElementById('cours1').value);
+            const cours2 = parseFloat(document.getElementById('cours2').value);
+            const cours3 = parseFloat(document.getElementById('cours3').value);
+
+            const Somme = cours1 + cours2 + cours3;
+            const moyenne = somme / 20;
+            const pourcentage = (somme / 20) * 5;
+
+            const etudiant = { id: etudiantId++, nom, cours1, cours2, cours3, somme, moyenne, pourcentage };
+            Etudiants.push(etudiant);
+
+            const row = `
+                <tr>
+                    <td>${etudiant.id}</td>
+                    <td>${etudiant.nom}</td>
+                    <td>${etudiant.cours1}</td>
+                    <td>${etudiant.cours2}</td>
+                    <td>${etudiant.cours3}</td>
+                    <td>${etudiant.somme}</td>
+                    <td>${etudiant.moyenne.toFixed(2)}</td>
+                    <td>${etudiant.pourcentage.toFixed(2)}%</td>
+                </tr>
+            `;
+
+            tableBody.innerHTML += row;
+
+            // Réinitialise le formulaire
+            document.getElementById('EtudentForm').reset();
+        });
+    </script>
+</body>
+</html>

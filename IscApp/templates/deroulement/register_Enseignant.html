@@ -1,0 +1,37 @@
+{% load static%}
+<link rel="stylesheet" href="{% static 'IscApp/css/enseignant_style.css' %}">
+
+<h1><p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-6">Inscription Enseignant</p></h1> <br>
+
+                <form class="mx-1 mx-md-4" method="post" enctype="multipart/form-data" action="{% url 'register_Enseignant' %}">
+                  {% csrf_token %}
+                  {{ form.as_p }}  <!-- Assurez-vous d'utiliser le bon nom de variable -->
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="submit" class="btn btn-primary btn-lg">S'inscrire</button>
+                  </div>
+                </form>
+                <p>Déjà un compte ? <a href="{% url 'login_Enseignant' %}">Se connecter</a></p>
+
+{% if messages %}
+  <div class="alert alert-danger">
+    {% for message in messages %}
+      <p>{{ message }}</p>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% if form.errors %}
+  <div class="errors">
+    <ul>
+      {% for field in form %}
+        {% for error in field.errors %}
+          <li>{{ field.label }}: {{ error }}</li>
+        {% endfor %}
+      {% endfor %}
+      {% for error in form.non_field_errors %}
+        <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <div style="text-align: center; margin-bottom: 20px;">
+        <h3>REPUBLIQUE DEMOCRATIQUE DU CONGO</h3>
+        <h4>ENSEIGNEMENT SUPERIEUR ET UNIVERSITAIRE</h4>
+        <h5>INSTITUT SUPERIEUR DE COMMERCE DE GOMA</h5>
+        <h5>INFORMATION  DE RESUTATS NUMERO {{ user.id }} - Année Académique {{ current_year }}</h5>
+        
+    </div>
+    <title>Informations sur la Publication de Résultats Par Promotions</title>
+    <style>
+        @media print {
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Informations sur les Promotions</h1>
+
+    <h2>Promotions Concernées par la Session de Délibération</h2>
+
+    <ul id="promotions">
+        {% for promotion in promotions_concerned %}
+            <li>{{ promotion.nom }} - {{ promotion.description }}</li>
+        {% empty %}
+            <li>Aucune promotion concernée pour le moment.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Promotions Non Délibérées</h2>
+    <ul>
+        {% for promotion in promotions_not_deliberated %}
+            <li>
+                {{ promotion.nom }} - {{ promotion.description }} 
+                {% if probable_dates.promotion %}
+                    (Date Probable de Délibération: {{ probable_dates.promotion }})
+                {% else %}
+                    (Date Probable de Délibération non disponible)
+                {% endif %}
+            </li>
+        {% empty %}
+            <li>Toutes les promotions ont été délibérées.</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Boutons de gestion -->
+    <div class="no-print">
+        <button onclick="imprimerInformation()">Imprimer</button>
+        <button onclick="telechargerPDF()">Télécharger en PDF</button>
+        <button onclick="partager()">Partager</button>
+    </div>
+
+    <script>
+        function imprimerInformation() {
+            window.print();
+        }
+
+        function telechargerPDF() {
+            // Vous pouvez utiliser une bibliothèque comme jsPDF pour générer un PDF
+            const doc = new jsPDF();
+            const elementHTML = document.body.innerHTML;
+            doc.fromHTML(elementHTML, 15, 15, { 'width': 170 });
+            doc.save('informations_promotions.pdf');
+        }
+
+        function partager() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Informations sur les Promotions',
+                    text: 'Voici les informations sur les promotions...',
+                    url: window.location.href
+                }).then(() => {
+                    console.log('Document partagé avec succès');
+                }).catch((error) => console.error('Erreur lors du partage:', error));
+            } else {
+                alert('Votre navigateur ne supporte pas la fonction de partage.');
+            }
+        }
+    </script>
+
+    <!-- Ajoutez la bibliothèque jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+</body>
+</html>

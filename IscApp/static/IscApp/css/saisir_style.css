@@ -1,0 +1,63 @@
+/* Fichier : static/css/style.css */
+
+body {
+    background-color: #f8f9fa; /* Couleur de fond douce */
+    font-family: 'Roboto', sans-serif; /* Police moderne */
+    color: #333; /* Couleur de texte */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: white; /* Fond blanc pour le formulaire */
+    padding: 30px;
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    max-width: 500px; /* Largeur maximale du formulaire */
+    width: 100%;
+}
+
+h2 {
+    color: #007bff; /* Couleur du titre */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form .form-control {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button.btn-primary {
+    background-color: #007bff; /* Couleur du bouton */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button.btn-primary:hover {
+    background-color: #0056b3; /* Couleur du bouton au survol */
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        width: 90%; /* Adapter la largeur pour les petits écrans */
+    }
+}

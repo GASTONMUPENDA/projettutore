@@ -1,0 +1,31 @@
+{%load static%}
+<nav>
+    <link rel="stylesheet" href="{% static '/IscApp/css/navbare_style.css' %}">
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{%url 'informations_promotions' %}">Informations</a></li>
+        <li><a href="{% url 'user_choice' %}">Connexion</a>
+            <ul>
+                {% if user.is_authentificated%}
+                <a href="{%url 'customuser' %}" class="btn btn - info">Connexion</a>
+                <li><a href="{% url 'register_Etudiant' %}">Etudiant</a></li>
+                <li><a href="{% url 'register_Enseignant' %}">Enseignant</a></li>
+                {%else%}
+                {% endif %}
+            </ul>
+        </li>
+    </ul>
+    <form action="{% url 'search_results' %}" method="GET" style="display:inline;">
+        <input type="text" name="matricule" placeholder="Rechercher...">
+        <button type="submit">Rechercher</button>
+    </form>
+    <a href="{% url 'notifications' %}" class="notification-icon">
+        <img src="{% static 'images/notification.png' %}" alt="Notifications">
+        <span class="badge">3</span>
+    </a>
+    <div class="profile">
+        <a href="{% url '' %}">
+            <img src="{% static 'images/profile.png' %}" alt="Profil" class="profile-img">
+        </a>
+    </div>
+</nav>

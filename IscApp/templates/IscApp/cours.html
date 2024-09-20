@@ -1,17 +1,30 @@
+{% load static %}
 <!-- templates/IscApp/cours.html -->
 {% extends 'IscApp/base.html' %}
 
 
 {% load static %}
 
-
-{% block title %}Cours{% endblock %}
-
 {% block content %}
-<h1>Cours</h1>
+<h1>Mes Unités d'enseignement</h1>
+<ul>
+    {% for cours in cours %}
+        <li><a href="{% url 'UE' UE.id %}">{{ ue.nom }}</a></li>
+    {% endfor %}
+</ul>
 
 
 <p>HORAIRE DE LA SEMAINE</p>
-{% include 'IscApp/footer.html'%}
+<table>
+    <p>ici l'administrateur aura à saisir dans un tableau l'HORAIRE hebdomadaire</p>
+</table>
+
+ <!-- Footer -->
+         
+ {% include 'includes/radio_okapi_feed.html' %}
+ <hr>
+ 
+ {% include 'includes/footer.html' %}
+<!-- Footer -->
 
 {% endblock %}

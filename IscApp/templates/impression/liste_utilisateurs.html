@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Utilisateurs</title>
+    <style>
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #monTableau, #monTableau * {
+                visibility: visible;
+            }
+            #monTableau {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .entete-impression {
+                display: block;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Liste des Utilisateurs</h1>
+
+<button onclick="imprimerTableau()">Imprimer</button>
+
+<!-- Tableau à imprimer -->
+<div id="monTableau">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <!-- Ajoutez d'autres colonnes si nécessaire -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for etudiant in etudiant %}
+            <tr>
+                <td>{{ etudiant.id }}</td>
+                <td>{{  etudiant.nom }}</td>
+                <td>{{  etudiant.email }}</td>
+                <!-- Ajoutez d'autres cellules si nécessaire -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function imprimerTableau() {
+        const titre = "Liste des Utilisateurs  Etudiants Enregistrés";
+        const date = new Date().toLocaleDateString();
+
+        const entete = `<div class="entete-impression"><h1>${titre}</h1><p>${date}</p></div>`;
+        const monTableau = document.getElementById('monTableau').outerHTML;
+
+        const fenetreImpression = window.open('', '', 'height=600,width=800');
+        fenetreImpression.document.open();
+        fenetreImpression.document.write('<html><head><title>Impression</title><style>@media print {.entete-impression {display: block; text-align: center; margin-bottom: 20px;}}</style></head><body>');
+        fenetreImpression.document.write(entete);
+        fenetreImpression.document.write(monTableau);
+        fenetreImpression.document.write('</body></html>');
+        fenetreImpression.document.close();
+        fenetreImpression.onload = function() {
+            fenetreImpression.print();
+        };
+    }
+</script>
+
+</body>
+</html>

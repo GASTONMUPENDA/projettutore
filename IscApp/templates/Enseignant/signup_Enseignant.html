@@ -1,0 +1,15 @@
+<!-- templates/IscApp/professeurs.html -->
+{% extends 'IscApp/base.html' %}
+
+
+{% load static %}
+
+{% block title %}INSCRIPTION ENSEIGNANT{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">s'inscrire</button>
+</form>
+{% endblock %}

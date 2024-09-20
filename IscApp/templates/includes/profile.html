@@ -1,0 +1,23 @@
+{% extends 'IscApp/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+</head>
+<body>
+
+{% block content %}
+<h2>Profil</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Mettre à jour</button>
+</form>
+<img src="{{ user.profile_image.url }}" alt="Photo de profil">
+{% endblock %}
+
+</body>
+</html>

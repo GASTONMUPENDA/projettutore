@@ -1,0 +1,46 @@
+{% load static %}
+<form method="post" action="{% url 'cote_etudiants_enregistrer' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if confirmation %}
+        <button type="submit" name="confirm" value="true">Confirmer et Enregistrer</button>
+    {% else %}
+        <button type="submit">Enregistrer les notes</button>
+    {% endif %}
+</form>
+
+<h2>Résultats Enregistrés</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Étudiant</th>
+            <th>UE</th>
+            <th>Promotion</th>
+            <th>Crédits</th>
+            <th>Travail Pratique</th>
+            <th>Interrogation</th>
+            <th>Examen</th>
+            <th>Total</th>
+            <th>Moyenne</th>
+            <th>Pourcentage</th>
+            <th>Mention</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for resultat in resultats %}
+        <tr>
+            <td>{{ resultat.etudiant }}</td>
+            <td>{{ resultat.ue }}</td>
+            <td>{{ resultat.promotion }}</td>
+            <td>{{ resultat.credits }}</td>
+            <td>{{ resultat.travail_pratique }}</td>
+            <td>{{ resultat.interrogation }}</td>
+            <td>{{ resultat.examen }}</td>
+            <td>{{ resultat.total }}</td>
+            <td>{{ resultat.moyenne }}</td>
+            <td>{{ resultat.pourcentage }}</td>
+            <td>{{ resultat.mention }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

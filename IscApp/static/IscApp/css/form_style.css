@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Couleur de fond par défaut */
+}
+
+.card {
+    border: none; /* Supprimer la bordure de la carte */
+    border-radius: 25px; /* Arrondir les coins */
+    background: rgba(255, 255, 255, 0.9); /* Couleur de fond semi-transparente */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+h1 {
+    color: #333; /* Couleur sombre pour le titre */
+}
+
+form {
+    background-color: transparent; /* Transparence pour fond d'image */
+    border-radius: 10px; 
+    padding: 20px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc; /* Bordure subtile autour des champs */
+    border-radius: 5px; 
+    font-size: 15px;
+}
+
+button[type="submit"] {
+    background-color: #007bff; /* Couleur principale du bouton */
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Couleur du bouton au survol */
+}
+
+.alert {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8d7da; /* Couleur d'alerte rouge clair */
+    color: #721c24; /* Rouge foncé pour le texte */
+    border: 1px solid #f5c6cb;
+    font-size: 14px;
+}
+
+a {
+    color: #007bff; /* Couleur des liens */
+    text-decoration: none; 
+}
+
+a:hover {
+    text-decoration: underline; /* Soulignement des liens au survol */
+}

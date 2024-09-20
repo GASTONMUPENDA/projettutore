@@ -1,0 +1,7 @@
+EMAIL_HOST = 'smtp.gmail.com'  # Utilisez le serveur SMTP de votre fournisseur de messagerie
+EMAIL_PORT = 587  # Port SMTP pour TLS
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'mupendakimpulengegaston@gmail.com'  # Votre adresse e-mail
+EMAIL_HOST_PASSWORD = 'gmk144996'  # Votre mot de passe d'application
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+SECRET_KEY = 'django-insecure-04+fj4w@d_qlpw04_db*-j3$j-7$t*0_@$mcp9%9h%!s#l$ea('

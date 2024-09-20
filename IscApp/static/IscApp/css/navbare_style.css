@@ -1,0 +1,133 @@
+/* General Navbar Styles */
+nav {
+    background-color: #003366; /* Dark blue background */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Arial', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navbar Links */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #ffffff; /* White text color */
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #00509E; /* Slightly lighter blue on hover */
+    border-radius: 4px;
+}
+
+/* Dropdown Menu */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #003366; /* Dark blue background */
+    padding: 10px 0;
+    list-style: none;
+    margin-top: 10px;
+    min-width: 150px;
+    border-radius: 4px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li a {
+    padding: 10px 15px;
+    text-align: left;
+    font-weight: normal;
+}
+
+/* Search Form */
+nav form {
+    display: flex;
+    align-items: center;
+}
+
+nav input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+nav button {
+    padding: 8px 12px;
+    background-color: #00509E;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #007BFF;
+}
+
+/* Notification Icon */
+.notification-icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-right: 20px;
+}
+
+.notification-icon img {
+    width: 25px;
+    height: 25px;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Profile Image */
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ffffff; /* White border around the profile image */
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.1);
+}

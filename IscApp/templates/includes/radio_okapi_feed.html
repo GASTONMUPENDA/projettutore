@@ -1,0 +1,14 @@
+
+        <div class="rss-feed">
+            <h2>Journal en Direct de Radio Okapi</h2>
+            <ul>
+                {% for entry in feed_entries %}
+                <li>
+                    <a href="{{ entry.link }}" target="_blank">{{ entry.title }}</a>
+                    <p>{{ entry.summary }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        

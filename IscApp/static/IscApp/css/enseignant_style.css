@@ -1,0 +1,71 @@
+/* Assurez-vous de charger ce fichier dans votre template */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9; /* Couleur de fond claire pour un aspect professionnel */
+    margin: 0;
+    padding: 0;
+}
+
+h1, .text-center {
+    color: #333; /* Couleur du titre plus sombre pour le contraste */
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #fff; /* Fond blanc pour le formulaire */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour donner de la profondeur */
+    max-width: 600px; /* Largeur maximale pour éviter de trop étendre */
+    margin: auto; /* Centrer le formulaire */
+}
+
+input, select, textarea {
+    width: 100%; /* Champs étendus à la largeur maximale */
+    padding: 10px;
+    margin: 10px 0; /* Espace entre les champs */
+    border: 1px solid #ddd; /* Bordure subtile autour des champs */
+    border-radius: 5px; /* Coins arrondis pour les champs */
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: #007bff; /* Couleur de bouton primaire */
+    color: #fff; /* Couleur du texte du bouton */
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px; /* Bouton arrondi */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transition douce pour le survol */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Couleur du bouton au survol */
+}
+
+.errors {
+    background-color: #f8d7da; /* Couleur de fond pour les erreurs */
+    color: #721c24; /* Couleur du texte des erreurs */
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.alert {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8d7da; /* Rouge léger pour les messages d'alerte */
+    color: #721c24; /* Rouge plus foncé pour le texte des messages */
+    border: 1px solid #f5c6cb;
+    font-size: 14px;
+}
+
+a {
+    color: #007bff; /* Couleur du lien */
+    text-decoration:

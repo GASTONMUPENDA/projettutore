@@ -1,71 +1,132 @@
+{% load static %}
 
-<!-- templates/IscApp/base.html -->
 <!DOCTYPE html>
-
-<html lang="en">
-    {% load static %}
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}IscApp Etudiant/Goma{% endblock %}</title>
-    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="{% static 'IscApp/images/logoisc.jpg' %}">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/loading_style.css' %}">
     <link rel="stylesheet" href="{% static 'IscApp/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'IscApp/css/plan.css' %}">
+    <link rel="stylesheet" href="{% static 'IscApp/css/animationtxt.css' %}">
+
+    <title>{% block title %}IscApp Etudiant/Goma{% endblock %}</title>
+
+    <!-- CSS for Loading Screen and Background Animation -->
     <style>
+        /* Loading Screen Styles */
+        #loading-screen {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #loading-screen img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        #loading-screen p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Background Animation Styles */
         body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
             background-image: url("{% static 'IscApp/images/logoisc.jpg' %}");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            animation: moveBackground 20s linear infinite;
+            padding: 20px;
+            min-height: 80vh;
+        }
+
+        @keyframes moveBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+
+        .header, .footer {
+            background-color: #fff;
+            padding: 10px;
         }
     </style>
-
-
-    <link rel="stylesheet" href="{% static 'IscApp/css/styles.css' %}">
-
-    <link rel="stylesheet" href="{% static 'IscApp/css/styles.css' %}">
-
-
-    <link rel="stylesheet" href="{% static 'IscApp/css/bootstrap.css' }">
-
-    
 </head>
 <body>
-    <nav>
-        
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'cours' %}">cours</a></li>
-            <li><a href="{% url  'user_choice' %}">Utilisateurs</a>
-                
-                <ul>
-                    <li><a href="{% url 'login_Etudiant' %}">Etudiant</a></li>
-                    <li><a href="{% url 'Enseignant' %}">Enseignant</a></li>
-                </ul>
-            </li>
-        </ul>
-        <!-- Bouton de recherche -->
-        <form action="{% url 'search_results' %}" method="GET" style="display:inline;">
-            <input type="text" name="matricule" placeholder="Rechercher...">
-            <button type="submit">Rechercher</button>
-        </form>
-        <!-- Notification -->
-        <a href="{% url 'notifications' %}" class="notification-icon">
-            <img src="{% static 'images/notification.png' %}" alt="Notifications">
-            <!-- Ajouter un indicateur pour le nombre de notifications -->
-            <span class="badge">3</span>
-        </a>
-        <!-- Photo de profil -->
-         
-        <div class="profile">
-            <a href="{% url 'profile' %}">
-                <img src="{% static 'images/profile.png' %}" alt="Profil" class="profile-img">
-            </a>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <img src="{% static 'IscApp/images/logoisc.jpg' %}" alt="Logo ISC">
+        <p>Veuillez patienter...</p>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" style="display: none;">
+        <!-- Header -->
+        <header class="header">
+            {% include 'IscApp/navbare.html' %}
+        </header>
+
+        <!-- Main Content Section -->
+        <div class="content d-flex justify-content-center align-items-center">
+            <h1 class="animated-text">BIENVENU SUR VOTRE APPLICATION</h1>
         </div>
-    </nav>
 
-    <h1 class="text-center"> BIEN VENU SUR VOTRE APPLICATION</h1>
+        <!-- Footer -->
+        <footer class="footer">
+            {% include 'includes/footer.html' %}
+        </footer>
+    </div>
 
-    
-    {% include "footer.html" %}
+    <!-- JavaScript for Loading Screen -->
+    <script>
+        window.addEventListener('load', function() {
+            // Hide loading screen and show main content after page load
+            document.getElementById('loading-screen').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        });
+    </script>
+
+    <!-- Additional JavaScript -->
+    <script src="{% static 'IscApp/js/backend.js' %}"></script>
+    <script src="{% static 'IscApp/js/jquery.min.js' %}"></script>
+    <script src="{% static 'IscApp/js/bootstrap.min.js' %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Profile image click handler
+            document.querySelector('.profile-img').addEventListener('click', function() {
+                alert('Profile clicked!');
+            });
+
+            // Navbar link hover effects
+            document.querySelectorAll('nav ul li a').forEach(function(link) {
+                link.addEventListener('mouseover', function() {
+                    link.style.color = 'red';
+                });
+                link.addEventListener('mouseout', function() {
+                    link.style.color = '';
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,25 +1,16 @@
-<!-- templates/IscApp/search_results.html -->
-{% extends 'IscApp/base.html' %}
-
-
-{% load static %}
-
-
-{% block title %}Résultats de recherche{% endblock %}
-{% block content %}
-<div class="container">
-    <h1>Résultats de recherche pour "{{ query }}"</h1>
-    {% if etudiant %}
-      <p>matricule: {{ etudiant.matricule }}</p>
-      <p>Nom : {{ etudiant.nom }}</p>
-      <p>Prénom : {{ etudiant.prenom }}</p>
-      <p>Email : {{ etudiant.email }}</p>
-      <p>Date de naissance : {{ etudiant.date_naissance }}</p>
-    {% else %}
-      <p>Aucun étudiant trouvé.</p>
-    {% endif %}
-</div>
-
-  
-    <!-- Afficher les résultats de recherche ici -->
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <ul>
+        {% for result in results %}
+            <li>{{ result }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

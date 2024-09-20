@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultats</title>
+</head>
+<body>
+    <h2>Résultats</h2>
+    <table>
+        <tr>
+            <th>Cours</th>
+            <th>Note</th>
+            <th>Mention</th>
+        </tr>
+        {% for resultat in resultats %}
+        <tr>
+            <td>{{ resultat.cours.nom }}</td>
+            <td>{{ resultat.pourcentage }}</td>
+            <td>{{ resultat.mention }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

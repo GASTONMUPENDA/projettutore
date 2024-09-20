@@ -1,0 +1,31 @@
+
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centre verticalement */
+    width: 100%;   /* Centre horizontalement */
+    background-color: #ffffff;
+}
+
+.animated-text {
+    font-size: 3rem;
+    color: #007bff;
+    font-weight: bold;
+    animation: bounce 2s infinite; /* Animation de rebond */
+    text-align: center;
+}
+
+/* Animation de rebond */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); /* Point de départ */
+    }
+    40% {
+        transform: translateY(-20px); /* Rebondir vers le haut */
+    }
+    60% {
+        transform: translateY(-10px); /* Rebondir vers le bas */
+    }
+}

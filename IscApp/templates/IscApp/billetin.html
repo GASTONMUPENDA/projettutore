@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulletin des Cotes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<div style="text-align: center; margin-bottom: 20px;">
+    <h3>REPUBLIQUE DEMOCRATIQUE DU CONGO</h3>
+    <h4>ENSEIGNEMENT SUPERIEUR ET UNIVERSITAIRE</h4>
+    <h5>INSTITUT SUPERIEUR DE COMMERCE DE GOMA</h5>
+    <h5>RELEVE DE COTE NUMERO {{ user.id }} - Année Académique {{ current_year }}</h5>
+</div>
+
+<body>
+    <h1>Bulletin des Cotes</h1>
+    <h3>Nom de l'Étudiant: {{ etudiant.nom }}</h3>
+    <h4>Matricule: {{ etudiant.matricule }}</h4>
+    <table>
+        <tr>
+            <th>Cours</th>
+            <th>Note</th>
+            <th>Mention</th>
+        </tr>
+        {% for resultat in results %}
+        <tr>
+            <td>{{ resultat.Cours.nom }}</td>
+            <td>{{ resultat.note }}</td>
+            <td>{{ resultat.get_mention_display }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Soumettre un Recours</h2>
+    <form method="post" action="{% url 'submit_recours' %}">
+        {% csrf_token %}
+        <textarea name="recours_message" placeholder="Tapez votre recours ici"></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+</body>
+</html>

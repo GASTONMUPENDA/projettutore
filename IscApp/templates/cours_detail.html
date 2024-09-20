@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relevé de Cotes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .header, .footer {
+            text-align: center;
+        }
+        .header img {
+            width: 50px;
+            height: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 4px;
+            text-align: center;
+        }
+        .details, .decision {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .details td {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p>République Démocratique du Congo<br>
+            Enseignement Supérieur et Universitaire<br>
+            INSTITUT SUPERIEUR DE COMMERCE<br>
+            I.S.C. - GOMA</p>
+            <p>E-mail: admin@iscgoma.ac.cd ; Téléphone: +243 990 365 393</p>
+            <h3>RELEVE DE COTES N° ISC-GOM/SGI/.../2024</h3>
+        </div>
+
+        <table class="details">
+            <tr>
+                <td><b>Nom:</b> ALI</td>
+                <td><b>Post-Nom:</b> RASHIDI</td>
+                <td><b>Prénom:</b> ABDOUL</td>
+            </tr>
+            <tr>
+                <td><b>Lieu de naissance:</b> KINDU</td>
+                <td><b>Date de naissance:</b> 09/07/2002</td>
+                <td><b>Numéro matricule:</b> I18MS023C30635G</td>
+            </tr>
+            <tr>
+                <td><b>Domaine:</b> Sciences Economiques et de Gestion</td>
+                <td><b>Filière:</b> Gestion Commerciale et Administrative</td>
+                <td><b>Mention:</b> Gestion Informatique</td>
+            </tr>
+            <tr>
+                <td><b>Promotion:</b> Première année de Licence</td>
+                <td colspan="2"><b>Année Académique:</b> 2022 - 2023</td>
+            </tr>
+        </table>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>CODE UE</th>
+                    <th>MATIERES (E.C)</th>
+                    <th>CATEGORIE</th>
+                    <th>COTE /20</th>
+                    <th>CREDITS ECTS</th>
+                    <th>CAPITAL SES</th>
+                    <th>NOTES</th>
+                    <th>VALIDATION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Repeat similar rows for each subject -->
+                <tr>
+                    <td>1</td>
+                    <td>COMM111</td>
+                    <td>Technique de Communication écrite et Orale</td>
+                    <td>B</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>F</td>
+                    <td>Validé</td>
+                </tr>
+                <!-- Add other subjects similarly -->
+                <tr>
+                    <td colspan="7" style="text-align: right;">Moyenne Semestre</td>
+                    <td colspan="2">10,38</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="decision">
+            <tr>
+                <td colspan="2">Moyenne annuelle</td>
+                <td>10,85</td>
+            </tr>
+            <tr>
+                <td colspan="2">Pourcentage</td>
+                <td>54,2</td>
+            </tr>
+        </table>
+
+        <div class="footer">
+            <p>Fait à Goma, le 09/09/2024<br>
+            Le Chef de Section: CT Lévis KIBANDJA SHEKYANDI<br>
+            Le Secrétaire Général Académique: Prof. Dr. JARIBU MULIWAVYO</p>
+        </div>
+    </div>
+</body>
+</html>

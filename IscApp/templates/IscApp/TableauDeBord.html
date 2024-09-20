@@ -1,34 +1,45 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Tableau de Bord</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord Étudiant - ISC-Goma</title>
+    <link rel="stylesheet" href="{% static 'IscApp/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'IscApp/css/dashboard_etudiant.css' %}">
 </head>
 <body>
-    <h2>Bienvenue, {{ user.username }}</h2>
-    <p><a href="{% url 'logout' %}">Se déconnecter</a></p>
-    <!-- Ajoutez les fonctionnalités ici -->
-    <ul>
-        <li><a href="#">Consulter les résultats</a></li>
-        <li><a href="#">S'inscrire aux cours</a></li>
-        <li><a href="#">Se désabonner du système</a></li>
-        <li><a href="#">Envoyer un recours</a></li>
-    </ul>
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Tableau de Bord</title>
-</head>
-<body>
-    <h2>Bienvenue, {{ user.username }}</h2>
-    <p><a href="{% url 'logout' %}">Se déconnecter</a></p>
-    <!-- Ajoutez les fonctionnalités ici -->
-    <ul>
-        <li><a href="#">Consulter les résultats</a></li>
-        <li><a href="#">S'inscrire aux cours</a></li>
-        <li><a href="#">Se désabonner du système</a></li>
-        <li><a href="#">Envoyer un recours</a></li>
-    </ul>
+    <div class="container mt-5">
+        <header class="text-center mb-4">
+            <h2>Bienvenue, {{ user.nom }}</h2>
+        </header>
+        
+        <div class="dashboard-menu card shadow-sm p-4">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a href="{% url 'Resultat' %}" class="dashboard-link">Consulter les résultats</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{% url 'informations_promotions' %}" class="dashboard-link">Informations sur le Résultats</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{% url 'submit_recours' %}" class="dashboard-link">Envoyer un recours</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{% url 'archives' %}" class="dashboard-link">Archive</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{% url 'home' %}" class="dashboard-link">Retour</a>
+                </li>
+            </ul>
+            <p class="text-center mt-3">
+                <a href="{% url 'logout' %}" class="btn btn-danger logout-btn">Se déconnecter</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Inclure les fichiers JavaScript -->
+    <script src="{% static 'IscApp/js/jquery.min.js' %}"></script>
+    <script src="{% static 'IscApp/js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>

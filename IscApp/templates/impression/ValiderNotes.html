@@ -1,0 +1,21 @@
+<h2>Validation des Notes</h2>
+<form method="post">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th>Etudiant</th>
+            <th>Cours</th>
+            <th>Note</th>
+            <th>Action</th>
+        </tr>
+        {% for note in notes_a_valider %}
+        <tr>
+            <td>{{ note.etudiant }}</td>
+            <td>{{ note.cours }}</td>
+            <td>{{ note.note }}</td>
+            <td><input type="checkbox" name="valider_{{ note.id }}"> Valider</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <button type="submit">Valider les notes sélectionnées</button>
+</form>

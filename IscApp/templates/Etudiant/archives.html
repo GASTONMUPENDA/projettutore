@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultats Récents</title>
+</head>
+<body>
+    <h1>Résultats Récents pour {{ request.user.nom }} {{ request.user.prénom }}</h1>
+
+    {% if results %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Cours</th>
+                    <th>Travail Pratique</th>
+                    <th>Interrogation</th>
+                    <th>Examen</th>
+                    <th>Total</th>
+                    <th>Moyenne</th>
+                    <th>Pourcentage</th>
+                    <th>Date d'Ajout</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                    <tr>
+                        <td>{{ result.cours }}</td>
+                        <td>{{ result.travail_pratique }}</td>
+                        <td>{{ result.interrogation }}</td>
+                        <td>{{ result.examen }}</td>
+                        <td>{{ result.total }}</td>
+                        <td>{{ result.moyenne }}</td>
+                        <td>{{ result.pourcentage }}%</td>
+                        <td>{{ result.date_ajout }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Aucun résultat trouvé.</p>
+    {% endif %}
+</body>
+</html>

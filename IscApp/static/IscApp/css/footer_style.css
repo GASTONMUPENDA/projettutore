@@ -1,0 +1,188 @@
+/* General Styles for the Footer */
+#footer-part {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 40px 0;
+  font-family: 'Arial', sans-serif;
+}
+
+#footer-part a {
+  color: #f8f9fa;
+  text-decoration: none;
+}
+
+#footer-part a:hover {
+  color: #ddd;
+  text-decoration: underline;
+}
+
+/* Make Footer Content Horizontal */
+.footer-top .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adds space between elements */
+}
+
+.footer-about,
+.footer-link,
+.footer-address {
+  flex: 1; /* Allows each section to grow equally */
+  padding: 0 20px;
+  min-width: 200px; /* Minimum width to keep sections aligned */
+}
+
+.footer-title h6 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-title h6::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 40px;
+  background-color: #007bff;
+}
+
+/* Social Icons */
+.footer-about ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 10px; /* Adds space between icons */
+}
+
+.footer-about ul li {
+  display: inline-block;
+}
+
+.footer-about ul li a {
+  display: block;
+  width: 36px;
+  height: 36px;
+  background-color: #333;
+  text-align: center;
+  line-height: 36px;
+  border-radius: 50%;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.footer-about ul li a:hover {
+  background-color: #007bff;
+}
+
+/* Footer Links */
+.footer-link ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-link ul li {
+  margin-bottom: 10px;
+}
+
+.footer-link ul li a {
+  color: #bbb;
+}
+
+.footer-link ul li a:hover {
+  color: #007bff;
+}
+
+/* Contact Information */
+.footer-address .icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #333;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.footer-address .cont {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Copyright Section */
+.footer-copyright {
+  border-top: 1px solid #333;
+  margin-top: 20px;
+  padding-top: 10px;
+  color: #aaa;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 50%;
+  display: none;
+  text-align: center;
+  z-index: 999;
+  transition
+
+  .login-container button:hover {
+    background-color: #0056b3;
+}
+
+.login-container a {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.login-container a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 2rem;
+}
+
+.footer .logo {
+    margin-right: 5px;
+}
+
+.footer .logo img {
+    width: 10px; /* Reduce the size of the logo image */
+    height: auto;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+

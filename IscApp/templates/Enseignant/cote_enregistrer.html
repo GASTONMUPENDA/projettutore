@@ -1,0 +1,37 @@
+{% load static %}
+<form method="post" action="{% url 'cote_etudiants_enregistrer' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <!-- Section pour afficher le calcul -->
+    <p>Total: <span id="total">0</span></p>
+    <p>Moyenne: <span id="moyenne">0</span></p>
+    <p>Pourcentage: <span id="pourcentage">0</span>%</p>
+
+    <button type="submit">Enregistrer les notes</button>
+</form>
+
+<script>
+    // Fonction pour calculer le total, la moyenne et le pourcentage
+    function calculer() {
+        // Récupérer les valeurs des champs de formulaire
+        const travail_pratique = parseFloat(document.getElementById('id_travail_pratique').value) || 0;
+        const interrogation = parseFloat(document.getElementById('id_interrogation').value) || 0;
+        const examen = parseFloat(document.getElementById('id_examen').value) || 0;
+
+        // Calculer le total, la moyenne et le pourcentage
+        const total = travail_pratique + interrogation + examen;
+        const moyenne = total / 20;  // ou autre formule si nécessaire
+        const pourcentage = (moyenne / 20) * 5;  // Supposons que 20 soit le score maximum
+
+        // Afficher les résultats dans les éléments HTML
+        document.getElementById('total').textContent = total.toFixed(2);
+        document.getElementById('moyenne').textContent = moyenne.toFixed(2);
+        document.getElementById('pourcentage').textContent = pourcentage.toFixed(2);
+    }
+
+    // Attacher l'événement 'input' aux champs de note
+    document.getElementById('id_travail_pratique').oninput = calculer;
+    document.getElementById('id_interrogation').oninput = calculer;
+    document.getElementById('id_examen').oninput = calculer;
+</script>
